@@ -1,5 +1,5 @@
 {
-  "name": "process",
+  "name": "processing",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,5 +12,8 @@
   "packageManager": "pnpm@10.9.0",
   "devDependencies": {
     "@types/p5": "^1.7.6"
+  },
+  "dependencies": {
+    "@types/matter-js": "^0.19.8"
   }
 }

@@ -20,7 +20,7 @@
   <div class="container">
     <section class="hero">
       <div id="iTtle">
-        <h1>Random Walk</h1>
+        <h1>template</h1>
       </div>
       <div id="canvas-parent"></div>
       <p>ka-shifuka</p>
@@ -32,30 +32,11 @@
 
     <section class="description">
       <h1>Penjelasan</h1>
-      <br>
-      <p>
-        Bayangkan sebuah titik dimana titik itu memiliki sebuah rule atau aturan dan aturanya titik tersebut akan pindah
-        posisi satu langkah secara acak.
-      </p>
-      <br>
-      <p>
-        Dimana di sini langkah acak ditentukan pada fungsi random:
-      </p>
-      <pre><code class="language-javascript">const step = Math.floor(random(3)) - 1</code></pre>
-      <p>
-        pada p5js fungsi random mengambil nilai parameter 2 yaitu min dan max dengan memilih -1,0 dan 1 dimana -1 akan
-        mundur atau
-        kekiri dan 1 akan ke kanan dan ke atas dan 0 akan diam.
-      </p>
-      <br>
-      <p>
-        Randomness bukanlah solusi untuk menciptakan simulasi yang terlihat natural. Dengan beberapa trik kitabisa
-        membuat random terlihat lebih natural dengan menambahkan probabilitas.
-      </p>
-      <br>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam veniam quam iste repellat nisi enim sint
+        excepturi necessitatibus. Exercitationem, earum. Voluptatum ipsum eaque, facere tempora eveniet harum magnam
+        iusto quidem.</p>
+
       <a href="./probability.html">lihat Random Walk dengan probabilitas</a>
-      <br>
-      <a href="./index.html">Home</a>
     </section>
   </div>
 
@@ -78,40 +59,9 @@
   </section>
 
   <script>
-    document.querySelector("code").innerHTML = `let walker
-
-function setup() {
-  const canvas = createCanvas(300, 300)
-  // additional canvas thing (optional)
-  canvas.addClass("canvas-p5")
-  canvas.parent("canvas-parent")
-  canvas.elt.style = ""
-
-  walker = new Walker()
-
-  background(color("#ffffff"))
-}
-
-function draw() {
-  walker.draw()
-}
-
-class Walker {
-  constructor(x, y) {
-    this.x = x || width / 2
-    this.y = y || height / 2
-  }
-
-  draw() {
-    const stepX = Math.floor(random(3)) - 1
-    const stepY = Math.floor(random(3)) - 1
-    this.x += stepX
-    this.y += stepY
-
-    stroke(0)
-    point(this.x, this.y)
-  }
-}`
+    document.querySelector("code").innerHTML = `
+class Template {}
+    `
     Prism.highlightAll()
   </script>
 </body>

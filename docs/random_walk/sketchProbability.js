@@ -13,26 +13,30 @@ function setup() {
 }
 
 function draw() {
-  walker.step()
   walker.draw()
 }
 
 class Walker {
   constructor(x, y) {
-    this.x = x || width/2
-    this.y = y || height/2
-  }
-
-  step() {
-    const stepX = Math.floor(Math.random()*3)-1
-    const stepY = Math.floor(Math.random()*3)-1
-
-    this.x += stepX
-    this.y += stepY
+    this.x = x || width / 2
+    this.y = y || height / 2
   }
 
   draw() {
+    const stepX = Math.floor(random(3)) - 1
+    const stepY = Math.floor(random(3)) - 1
+
+    // 50% probability to go right
+    if (random() > 0.5) {
+      this.x += 1
+    } else {
+      this.x += stepX
+    }
+
+    this.y += stepY
+
     stroke(0)
     point(this.x, this.y)
   }
 }
+

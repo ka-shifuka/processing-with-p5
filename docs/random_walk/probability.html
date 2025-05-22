@@ -13,20 +13,20 @@
 
   <script src="../prism.js"></script>
   <script src="../p5.min.js"></script>
-  <script src="./sketch.js"></script>
+  <script src="./sketchProbability.js"></script>
 </head>
 
 <body>
   <div class="container">
     <section class="hero">
       <div id="iTtle">
-        <h1>Random Walk</h1>
+        <h1>Random Walk with probability</h1>
       </div>
       <div id="canvas-parent"></div>
       <p>ka-shifuka</p>
       <br>
       <section class="code-container">
-        <pre><code class="language-javascript"></code></pre>
+        <pre><code id="code" class="language-javascript"></code></pre>
       </section>
     </section>
 
@@ -34,28 +34,19 @@
       <h1>Penjelasan</h1>
       <br>
       <p>
-        Bayangkan sebuah titik dimana titik itu memiliki sebuah rule atau aturan dan aturanya titik tersebut akan pindah
-        posisi satu langkah secara acak.
+        Probabilitas pada random() sangat sederhana buat sebuah perbandingan seperti dibawah ini
+      </p>
+      <pre><code class="language-javascript">if (random() < 0.5) { do something }</code></pre>
+      <p>
+        Yang artinya dengan 50% kemunkinan lakukan sesuatu
       </p>
       <br>
       <p>
-        Dimana di sini langkah acak ditentukan pada fungsi random:
-      </p>
-      <pre><code class="language-javascript">const step = Math.floor(random(3)) - 1</code></pre>
-      <p>
-        pada p5js fungsi random mengambil nilai parameter 2 yaitu min dan max dengan memilih -1,0 dan 1 dimana -1 akan
-        mundur atau
-        kekiri dan 1 akan ke kanan dan ke atas dan 0 akan diam.
-      </p>
-      <br>
-      <p>
-        Randomness bukanlah solusi untuk menciptakan simulasi yang terlihat natural. Dengan beberapa trik kitabisa
-        membuat random terlihat lebih natural dengan menambahkan probabilitas.
-      </p>
-      <br>
-      <a href="./probability.html">lihat Random Walk dengan probabilitas</a>
-      <br>
-      <a href="./index.html">Home</a>
+        Fungsi random() pada p5js mengembalikan float number dari 0 dan 1. Dengan membuat perbandingan pada fungsi
+        random() kita bisa membuat probabilitas dengan menentukan seberapa besar peluang terjadi jika random() < 0.1
+          artinya 10% dan kalian bisa bermain main dengan probabilitas ini. </p>
+          <br>
+          <a href="../index.html">Home</a>
     </section>
   </div>
 
@@ -78,7 +69,7 @@
   </section>
 
   <script>
-    document.querySelector("code").innerHTML = `let walker
+    document.querySelector("#code").innerHTML = `let walker
 
 function setup() {
   const canvas = createCanvas(300, 300)
@@ -105,13 +96,21 @@ class Walker {
   draw() {
     const stepX = Math.floor(random(3)) - 1
     const stepY = Math.floor(random(3)) - 1
-    this.x += stepX
+
+    // 50% probability to go right
+    if (random() > 0.5) {
+      this.x += 1
+    } else {
+      this.x += stepX
+    }
+
     this.y += stepY
 
     stroke(0)
     point(this.x, this.y)
   }
 }`
+
     Prism.highlightAll()
   </script>
 </body>

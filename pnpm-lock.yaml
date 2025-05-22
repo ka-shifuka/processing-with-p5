@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@types/matter-js':
+        specifier: ^0.19.8
+        version: 0.19.8
     devDependencies:
       '@types/p5':
         specifier: ^1.7.6
@@ -14,9 +18,14 @@ importers:
 
 packages:
 
+  '@types/matter-js@0.19.8':
+    resolution: {integrity: sha512-W2ZWG58Lijv/4v768NgpeyFqqiOyslmAU7qqM1Lhz4XBoUgGtZtPz4CjcOKYtqHIak14dvPldslQhltqLTWwsw==}
+
   '@types/p5@1.7.6':
     resolution: {integrity: sha512-6pLTOo0V3N5jZb5nTwjiv3lPHLK3Z/TjbhQUj8CTWXocUk1Z/f6OHTp3Pcwi1BhWnf5gqKUcyEb1gP0KIJuQgw==}
 
 snapshots:
+
+  '@types/matter-js@0.19.8': {}
 
   '@types/p5@1.7.6': {}
